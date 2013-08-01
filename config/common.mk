@@ -125,7 +125,7 @@ PRODUCT_COPY_FILES += \
     vendor/carbon/config/permissions/com.carbon.nfc.enhanced.xml:system/etc/permissions/com.carbon.nfc.enhanced.xml
 
 # version
-RELEASE = false
+RELEASE = true
 CARBON_VERSION_MAJOR = 1
 CARBON_VERSION_MINOR = 8
 
@@ -133,23 +133,23 @@ CARBON_VERSION_MINOR = 8
 ifdef CARBON_NIGHTLY
     CARBON_BUILDTYPE := NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-#        ro.goo.rom=carbonjb2exp \
-#        ro.goo.developerid=carbon \
-#        ro.goo.version=$(shell date +%Y%m%d)
+        ro.goo.rom=carbonjb2exp \
+        ro.goo.developerid=carbon \
+        ro.goo.version=$(shell date +%Y%m%d)
 endif
 ifdef CARBON_EXPERIMENTAL
     CARBON_BUILDTYPE := EXPERIMENTAL
     PRODUCT_PROPERTY_OVERRIDES += \
-#        ro.goo.rom=carbonjb2exp \
-#        ro.goo.developerid=carbon \
-#        ro.goo.version=$(shell date +%Y%m%d)
+        ro.goo.rom=carbonjb2exp \
+        ro.goo.developerid=carbon \
+        ro.goo.version=$(shell date +%Y%m%d)
 endif
 ifdef CARBON_RELEASE
     CARBON_BUILDTYPE := RELEASE
     PRODUCT_PROPERTY_OVERRIDES += \
-#        ro.goo.rom=carbonjb2 \
-#        ro.goo.developerid=carbon \
-#        ro.goo.version=$(shell date +%Y%m%d)
+        ro.goo.rom=carbonjb2 \
+        ro.goo.developerid=carbon \
+        ro.goo.version=$(shell date +%Y%m%d)
 endif
 #Set Unofficial if no buildtype set (Buildtype should ONLY be set by Carbon Devs!)
 ifdef CARBON_BUILDTYPE
